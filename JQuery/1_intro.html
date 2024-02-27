@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery intro</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script></body>
+    <!-- <script src="jquery.js"></script> -->
+</head>
+
+<body>
+    <p class="hello" id="id1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, earum. Nobis, assumenda.
+        <h2>shaligram infotech</h2>
+    </p>
+    <ul>
+        <li>item1 </li>
+        <li>item2 </li>
+        <li>item3 </li>
+        <li>item4 </li>
+        <li>item5 </li>
+
+    </ul>
+
+   <script>
+    //  <!-- selectors  -->
+    $('.hello');         // <!-- class  -->
+    $(".hello");
+    $('#id1');               // <!-- id  -->
+    $('p');              // <!-- tag  -->   
+     $("*");            // to select all the tags 
+    $("ul li");          //  parent child selectior   
+    $(".abc, .xfg")             // multiple class  
+    $("p, h1, div")             // mutiple tags  
+    $('#id1').html();          //// innerHTML  
+    $("p:first");           //pseudo selector
+    $("p:last")
+    $("li:even")
+    $("li:odd")
+    $("p.intro")	        //Selects all <p> elements with class="intro"
+    $(this)                 //Selects the current HTML element
+    $(":button")            //Selects all <button> elements and <input> elements of type="button"
+    $("[href]")             //Selects all elements with an href attribute   
+    // div + p   sibling selector  
+
+
+    $(document).ready(function(){
+        // console.log("running");
+
+        var a =  $('#id1').html();    //innerHTLM
+        // console.log(a);
+        
+        var b =  $("#id").val();        // value of element
+
+        $("#id1").css("color", "red");              //style
+        $("#id1").css("border","2px solid red")
+        $("ul li:eq(1)").css("border", "2px  dotted black");
+        $("ul li:gt(3)").css("border", "2px  dotted gray");
+
+        // event 
+                // Mouse Events => click, dblclick, mouseenter, mouseleave
+                // Keyboard Events => keypress ,= keydown, keyup
+                // Form Events => 	submit, change, focus, blur, select 
+                // Document/Window Events  => scroll,  resize,    removed in v3 ( unload,	load)
+        $("#id1").click(function(){
+            $("#id1").css("background-color", "white");
+        });
+
+        // Get Content and Attributes => text(), html(), val(), attr()
+                // text give only text 
+                // html give text + tag 
+                // attr give attribute value 
+                var attr1 = $("#id1").attr("class");
+                console.log(`this is ${attr1}`);
+
+        // Set Content - text(), html(), attr(), val()
+            $("#id1").click(function(){
+                $("#id1").text("hello everyone!");
+            });
+            $("#id1").click(function(){
+                $("ul").html("<li>added item 1 </li><li>added item 2 </li>");
+            });
+            $("#id1 h2").attr("class", "red");
+
+        // on , off method
+        // append-add content at last ,  prepend- at first
+        // after , before  = add content after/before element
+        // remove , empty = remove tag or empty tag/
+        // AppendTo , PrependTo   $(content).append(content);
+        // clone 
+        // ReplaceWith , ReplaceAll 
+        // wrap, unwrap, wrapAll, wrapInner
+
+        // width => width(), innerWidth(), outerWidth(), outerWidth(true);
+        // height() => 
+        // position = relative to its parent element , offset = relative to document
+        // top , left = when position is relative 
+        // scrollTop ,scrollLeft
+        // hasClass()
+        // hide, show 
+
+    });
+
+
+    // $(function(){                // write this at end of body tag, another way to write ready function 
+
+    // });
+
+   </script>
+
+</html>
