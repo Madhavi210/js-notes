@@ -9,7 +9,7 @@ const mySym = Symbol("key1")
 const JsUser = {
     name: "Hitesh",
     "full name": "Hitesh Choudhary",
-    [mySym]: "mykey1",
+    [mySym]: "mykey1",     //symbol*
     age: 18,
     location: "Jaipur",
     email: "hitesh@google.com",
@@ -33,6 +33,6 @@ JsUser.greeting = function(){
 JsUser.greetingTwo = function(){
     console.log(`Hello JS user, ${this.name}`);
 }
-
-console.log(JsUser.greeting());
+console.log(JsUser.greeting); //reference of function
+console.log(JsUser.greeting());  //function
 console.log(JsUser.greetingTwo());
