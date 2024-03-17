@@ -8,12 +8,14 @@ function sayMyName(){
     console.log("H");
 }
 
+// sayMyName          //only reference 
 // sayMyName()
 
-// function addTwoNumbers(number1, number2){
+// function addTwoNumbers(number1, number2){            //parameter
 
 //     console.log(number1 + number2);
 // }
+//addTwoNumbers(3,4);           //argument
 
 function addTwoNumbers(number1, number2){
 

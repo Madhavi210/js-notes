@@ -4,7 +4,7 @@ const user = {
 
     welcomeMessage: function() {
         console.log(`${this.username} , welcome to website`);
-        console.log(this);
+        console.log(this);         //current context 
     }
 
 }
@@ -13,7 +13,7 @@ const user = {
 // user.username = "sam"
 // user.welcomeMessage()
 
-// console.log(this);
+// console.log(this);           //{}  ,, and in browser it gives window {} object
 
 // function chai(){
 //     let username = "hitesh"
