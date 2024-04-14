@@ -14,6 +14,7 @@
         <div class="day">Wednesday</div>
         <div class="day">Thursday</div>
     </div>
+    <h3 id="headtitle">this is heading <span>test text</span></h3>
 </body>
 <script>
     const parent = document.querySelector('.parent')
@@ -35,5 +36,23 @@
     // console.log(dayOne.nextElementSibling);
 
     console.log("NODES: ", parent.childNodes);
+
+    var tc = document.getElementById('headtitle').textContent ;
+    console.log(tc);    //this is heading test text
+
+    var it = document.getElementById('headtitle').innerText ;
+    console.log(it); //this is heading 
+
+    var ih = document.getElementById('headtitle').innerHTML;
+    console.log(ih);   //this is heading <span>test text</span>
+
+    
+
+
 </script>
 </html>
+
+
+
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web api</title>
+</head>
+<body>
+    <!-- API stands for Application Programming Interface.
+    <h2>JavaScript Geolocation</h2>
+    <p>Click the button to get your coordinates.</p>
+    <button onclick="getLocation()">Try It</button>
+    <p id="demo"></p>
+
+
+
+    <h3>local storage api</h3>
+    <p>The Web Storage API is a simple syntax for storing and retrieving data in the browser. It is very easy to use</p> -->
+
+    <!-- localStorage.setItem("name", "John Doe");
+    localStorage.getItem("name"); -->
+
+    <!-- window.localStorage	=> Allows to save key/value pairs in a web browser. Stores the data with no expiration date
+    window.sessionStorage => Allows to save key/value pairs in a web browser. Stores the data for one session -->
+
+
+    <!-- ajax  -->
+        <!-- Read data from a web server - after the page has loaded
+        Update a web page without reloading the page
+        Send data to a web server - in the background -->
+
+        <div id="demo">
+            <h2>The XMLHttpRequest Object</h2>
+            <button type="button" onclick="loadDoc()">Change Content</button>
+        </div>
+        <div class="demo2">
+            <button type="button"  onclick="loadxml()">xml</button>
+        </div>
+<!-- 
+        XMLHttpRequest Object Properties
+
+onload  => 	Defines a function to be called when the request is received (loaded)
+onreadystatechange => 	Defines a function to be called when the readyState property changes
+readyState =>	Holds the status of the XMLHttpRequest.
+0: request not initialized
+1: server connection established
+2: request received
+3: processing request
+4: request finished and response is ready
+responseText =>	Returns the response data as a string
+responseXML =>	Returns the response data as XML data
+status =>	Returns the status-number of a request
+200: "OK"
+403: "Forbidden"
+404: "Not Found"
+For a complete list go to the Http Messages Reference
+statusText	Returns the status-text (e.g. "OK" or "Not Found") -->
+
+
+
+<!-- <p>get post method</p> -->
+<!-- GET is simpler and faster than POST, and can be used in most cases.
+
+However, always use POST requests when:
+
+A cached file is not an option (update a file or database on the server).
+Sending a large amount of data to the server (POST has no size limitations).
+Sending user input (which can contain unknown characters), POST is more robust and secure than GET. -->
+
+
+
+
+
+
+
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  try {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } catch {
+    x.innerHTML = err;
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+function loadDoc() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    document.getElementById("demo").innerHTML =
+    this.responseText;
+  }
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+
+
+function loadxml(){
+    const xhttp = new XMLHttpRequest();
+    const xmlDoc = xhttp.responseXML;
+    const xy = xmlDoc.getElementsByTagName("ARTIST");
+
+    let txt = "";
+    for (let i = 0; i < xy.length; i++) {
+    txt += xy[i].childNodes[0].nodeValue + "<br>";
+    }
+    document.getElementById("demo2").innerHTML = txt;
+
+    xhttp.open("GET", "category.xml");
+    xhttp.send();
+}
+
+</script>
+
+</body>
+</html>
