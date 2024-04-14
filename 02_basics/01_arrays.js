@@ -44,4 +44,5 @@ console.log(myn2);              //[0,4,5]
 
 
 // shallow copy => A shallow copy of an object is a copy whose properties share the same references (point to the same underlying values) as those of the source object from which the copy was made.
-// deep copy =>  A shallow copy of an object is a copy whose properties share the same references (point to the same underlying values) as those of the source object from which the copy was made.
+//Shallow Copy reflects changes made to the new/copied object in the original object.
+// deep copy =>  Deep copy doesn’t reflect changes made to the new/copied object in the original object.
